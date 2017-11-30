@@ -18,19 +18,30 @@
 
 <body>
 
-  <wr-slot3d isRunning="false" hasOverflow="false">
-    <wr-slot3d-item imageUrl="assets/images/1.png" name="1"></wr-slot3d-item>
-    <wr-slot3d-item imageUrl="assets/images/2.png" name="2"></wr-slot3d-item>
-    <wr-slot3d-item imageUrl="assets/images/3.png" name="3"></wr-slot3d-item>
-    <wr-slot3d-item imageUrl="assets/images/4.png" name="4"></wr-slot3d-item>
-    <wr-slot3d-item imageUrl="assets/images/5.png" name="5"></wr-slot3d-item>
-    <wr-slot3d-item imageUrl="assets/images/6.png" name="6"></wr-slot3d-item>
-    <wr-slot3d-item imageUrl="assets/images/7.png" name="7"></wr-slot3d-item>
-    <wr-slot3d-item imageUrl="assets/images/8.png" name="8"></wr-slot3d-item>
-    <wr-slot3d-item imageUrl="assets/images/9.png" name="9"></wr-slot3d-item>
-    <wr-slot3d-item imageUrl="assets/images/0.png" name="0"></wr-slot3d-item>
+  <input type="checkbox" id="spin" onchange="toggleSpin()">
+  <label for="spin">Spin</label>
+
+  <wr-slot3d id="slots" is-running="false">
+    <wr-slot3d-item image-url="/assets/images/1.png" name="1"></wr-slot3d-item>
+    <wr-slot3d-item image-url="/assets/images/2.png" name="2"></wr-slot3d-item>
+    <wr-slot3d-item image-url="/assets/images/3.png" name="3"></wr-slot3d-item>
+    <wr-slot3d-item image-url="/assets/images/4.png" name="4"></wr-slot3d-item>
+    <wr-slot3d-item image-url="/assets/images/5.png" name="5"></wr-slot3d-item>
+    <wr-slot3d-item image-url="/assets/images/6.png" name="6"></wr-slot3d-item>
+    <wr-slot3d-item image-url="/assets/images/7.png" name="7"></wr-slot3d-item>
+    <wr-slot3d-item image-url="/assets/images/8.png" name="8"></wr-slot3d-item>
+    <wr-slot3d-item image-url="/assets/images/9.png" name="9"></wr-slot3d-item>
+    <wr-slot3d-item image-url="/assets/images/0.png" name="0"></wr-slot3d-item>
   </wr-slot3d>
 
-</body>
+  <script lang="javascript">
+    function toggleSpin() {
+      var spin = document.getElementById('spin').checked;
+      var slots = document.getElementById('slots');
+      console.log(slots);
+      slots.setAttribute('is-running', spin);
+    }
+  </script>
 
+</body>
 </html>

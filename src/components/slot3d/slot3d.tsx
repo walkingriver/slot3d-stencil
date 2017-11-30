@@ -20,13 +20,11 @@ export class Slot3d {
         '-webkit-transform': rotateTransform
       }
     };
-    const numChildren = this.element.childElementCount;
+    // const numChildren = this.element.childElementCount;
 
     return (
       <div class="mk-container">
-          {numChildren} children
         <div class="mk-slotContainer">
-          {/* <div class={styles.spinnerClass} style={styles.spinnerStyle}> */}
           <div class={styles.spinnerClass} style={styles.spinnerStyle}>
             <slot />
           </div>

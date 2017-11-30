@@ -1,6 +1,6 @@
 exports.config = {
   bundles: [
-    { components: ['my-name'] }
+    { components: ['wr-slot3d', 'wr-slot3d-item'] }
   ],
   collections: [
     { name: '@stencil/router' }

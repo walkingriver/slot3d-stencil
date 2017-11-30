@@ -1,17 +1,17 @@
 import { flush, render } from '@stencil/core/testing';
-import { MyName } from './my-name';
+import { Slot3d } from './slot3d';
 
-describe('my-name', () => {
+describe('wr-slot3d', () => {
   it('should build', () => {
-    expect(new MyName()).toBeTruthy();
+    expect(new Slot3d()).toBeTruthy();
   });
 
   describe('rendering', () => {
     let element;
     beforeEach(async () => {
       element = await render({
-        components: [MyName],
-        html: '<my-name></my-name>'
+        components: [Slot3d],
+        html: '<wr-slot3d></wr-slot3d>'
       });
     });
 

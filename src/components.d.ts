@@ -6,32 +6,68 @@
 
 import '@stencil/router';
 
-import { MyName as MyName } from './components/my-name/my-name';
 
-interface HTMLMyNameElement extends MyName, HTMLElement {
-}
-declare var HTMLMyNameElement: {
-  prototype: HTMLMyNameElement;
-  new (): HTMLMyNameElement;
-};
+import {
+  Slot3dItem as WrSlot3dItem
+} from './components/slot3d-item/slot3d-item';
+
 declare global {
+  interface HTMLWrSlot3dItemElement extends WrSlot3dItem, HTMLElement {
+  }
+  var HTMLWrSlot3dItemElement: {
+    prototype: HTMLWrSlot3dItemElement;
+    new (): HTMLWrSlot3dItemElement;
+  };
   interface HTMLElementTagNameMap {
-      "my-name": HTMLMyNameElement;
+    "wr-slot3d-item": HTMLWrSlot3dItemElement;
   }
   interface ElementTagNameMap {
-      "my-name": HTMLMyNameElement;
+    "wr-slot3d-item": HTMLWrSlot3dItemElement;
   }
   namespace JSX {
-      interface IntrinsicElements {
-          "my-name": JSXElements.MyNameAttributes;
-      }
+    interface IntrinsicElements {
+      "wr-slot3d-item": JSXElements.WrSlot3dItemAttributes;
+    }
   }
   namespace JSXElements {
-      export interface MyNameAttributes extends HTMLAttributes {
-        
-          first?: any,
-          last?: any
-      }
+    export interface WrSlot3dItemAttributes extends HTMLAttributes {
+      
+        imageUrl?: string,
+        name?: string,
+        hasOverflow?: boolean
+    }
+  }
+}
+
+
+import {
+  Slot3d as WrSlot3d
+} from './components/slot3d/slot3d';
+
+declare global {
+  interface HTMLWrSlot3dElement extends WrSlot3d, HTMLElement {
+  }
+  var HTMLWrSlot3dElement: {
+    prototype: HTMLWrSlot3dElement;
+    new (): HTMLWrSlot3dElement;
+  };
+  interface HTMLElementTagNameMap {
+    "wr-slot3d": HTMLWrSlot3dElement;
+  }
+  interface ElementTagNameMap {
+    "wr-slot3d": HTMLWrSlot3dElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "wr-slot3d": JSXElements.WrSlot3dAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface WrSlot3dAttributes extends HTMLAttributes {
+      
+        isRunning?: boolean,
+        hasOverflow?: boolean
+    }
   }
 }
 

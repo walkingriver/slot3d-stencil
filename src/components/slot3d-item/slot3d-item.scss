@@ -1,0 +1,129 @@
+
+wr-slot3d-item {
+  mk-container {
+    .mk-slotContainer {
+      height: 100px;
+      background-color: white;
+      border-style: inset;
+      border-color: antiquewhite;
+      border-width: 1px;
+      width: 80px;
+      position: relative;
+      perspective: 3000px;
+      overflow: hidden;
+      text-align: center;
+    }
+    
+    .mk-spinner {
+     width: 100%;
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      -webkit-transform-style: preserve-3d;
+      transition: transform 0.5s ease-in;
+      -webkit-transition: -webkit-transform 0.5s ease-in;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    
+     .mk-slot-item {
+      margin: 0;
+      display: block;
+      position: absolute;
+      width: 58px;
+      height: 80px;
+      left: 10px;
+      top: 10px;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      }
+    }
+    
+    /* WebKit and Opera browsers */
+      @-webkit-keyframes spinner {
+        from { -webkit-transform: rotateX(0deg);    }
+        to   { -webkit-transform: rotateX(-360deg); }
+      }
+    
+      /* all other browsers */
+      @keyframes spinner {
+        from {
+          -moz-transform: rotateX(0deg);
+          -ms-transform: rotateX(0deg);
+          transform: rotateX(0deg);
+        }
+        to {
+          -moz-transform: rotateX(-360deg);
+          -ms-transform: rotateX(-360deg);
+          transform: rotateX(-360deg);
+        }
+      }
+    
+     .mk-spinning {
+        -webkit-animation-name: spinner;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-play-state: running;
+    
+        animation-name: spinner;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-duration: 2s;
+        animation-play-state: running;
+    
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+      }
+    
+    .mk-label {
+        white-space: wrap;
+        font-size: 11px;
+        line-height: 11px;
+        -moz-only-whitespace: wrap; 
+    }
+    
+      .mk-marquee {
+        position: relative;
+      }
+    
+      .mk-marquee span {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        text-align: center;      
+        /* Starting position */
+        -moz-transform:translateX(200%);
+        -webkit-transform:translateX(200%);	
+        transform:translateX(200%);
+        /* Apply animation to this element */	
+        -moz-animation: scroll-left 2.5s linear infinite;
+        -webkit-animation: scroll-left 2.5s linear infinite;
+        animation: scroll-left 2.5s linear infinite;
+      }
+    
+      /* Move it (define the animation) */
+    @-moz-keyframes scroll-left {
+     0%   { -moz-transform: translateX(100%); }
+     100% { -moz-transform: translateX(-200%); }
+    }
+    @-webkit-keyframes scroll-left {
+     0%   { -webkit-transform: translateX(100%); }
+     100% { -webkit-transform: translateX(-200%); }
+    }
+    @keyframes scroll-left {
+     0%   { 
+     -moz-transform: translateX(100%); /* Browser bug fix */
+     -webkit-transform: translateX(100%); /* Browser bug fix */
+     transform: translateX(100%); 		
+     }
+     100% { 
+     -moz-transform: translateX(-200%); /* Browser bug fix */
+     -webkit-transform: translateX(-200%); /* Browser bug fix */
+     transform: translateX(-200%); 
+     }
+    }
+    }
+  }

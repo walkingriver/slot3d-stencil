@@ -1,4 +1,4 @@
-import { Component, Element, Prop } from '@stencil/core';
+import { Component, Element, Prop, Method, State } from '@stencil/core';
 
 @Component({
   tag: 'wr-slot3d',
@@ -9,9 +9,21 @@ export class Slot3d {
 
   @Prop() isRunning = false;
   @Prop() hasOverflow = false;
+  @Prop() item = 0;
+
+  itemCount = 0;
+  itemAngle = 0;
+
+  componentWillLoad() {
+    this.itemCount = this.element.childElementCount;
+    console.log('Items: ', this.itemCount);
+    this.itemAngle = 360 / this.itemCount;
+    console.log('Angle: ', this.itemAngle);
+  }
 
   render() {
-    const rotateTransform = 'rotate(0deg)';
+    const rotateAngle = this.item * this.itemAngle;
+    const rotateTransform = `rotateX(${rotateAngle}deg)`;
     const styles = {
       spinnerClass: 'mk-spinner ' + (this.isRunning ? 'mk-spinning' : ''),
       marqueeClass: this.hasOverflow ? 'mk-marqee' : '',

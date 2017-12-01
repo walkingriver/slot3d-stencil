@@ -66,7 +66,8 @@ declare global {
     export interface WrSlot3dAttributes extends HTMLAttributes {
       
         isRunning?: boolean,
-        hasOverflow?: boolean
+        hasOverflow?: boolean,
+        item?: number
     }
   }
 }

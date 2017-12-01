@@ -14,32 +14,49 @@
   <link rel="apple-touch-icon" href="/assets/icon/icon.png">
   <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico">
   <link rel="manifest" href="/manifest.json">
+
+  <style>
+    html,body,input {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16pt;
+    }
+  </style>
 </head>
 
 <body>
-
-  <input type="checkbox" id="spin" onchange="toggleSpin()">
-  <label for="spin">Spin</label>
-
-  <wr-slot3d id="slots" is-running="false">
-    <wr-slot3d-item image-url="/assets/images/1.png"></wr-slot3d-item>
-    <wr-slot3d-item image-url="/assets/images/2.png"></wr-slot3d-item>
-    <wr-slot3d-item image-url="/assets/images/3.png"></wr-slot3d-item>
-    <wr-slot3d-item image-url="/assets/images/4.png"></wr-slot3d-item>
-    <wr-slot3d-item image-url="/assets/images/5.png"></wr-slot3d-item>
-    <wr-slot3d-item image-url="/assets/images/6.png"></wr-slot3d-item>
-    <wr-slot3d-item image-url="/assets/images/7.png"></wr-slot3d-item>
-    <wr-slot3d-item image-url="/assets/images/8.png"></wr-slot3d-item>
-    <wr-slot3d-item image-url="/assets/images/9.png"></wr-slot3d-item>
-    <wr-slot3d-item image-url="/assets/images/0.png"></wr-slot3d-item>
-  </wr-slot3d>
-
+  <p>
+    <input type="checkbox" id="spin" onchange="toggleSpin()">
+    <label for="spin">Spin</label>
+  </p>
+  <p>
+    <label for="item">Set item: </label>
+    <input type="number" min="0" max="9" id="item" value="5" onchange="setItem()">
+  </p>
+  <p>
+    <wr-slot3d id="slots" is-running="false" item="5">
+      <wr-slot3d-item image-url="/assets/images/1.png"></wr-slot3d-item>
+      <wr-slot3d-item image-url="/assets/images/2.png"></wr-slot3d-item>
+      <wr-slot3d-item image-url="/assets/images/3.png"></wr-slot3d-item>
+      <wr-slot3d-item image-url="/assets/images/4.png"></wr-slot3d-item>
+      <wr-slot3d-item image-url="/assets/images/5.png"></wr-slot3d-item>
+      <wr-slot3d-item image-url="/assets/images/6.png"></wr-slot3d-item>
+      <wr-slot3d-item image-url="/assets/images/7.png"></wr-slot3d-item>
+      <wr-slot3d-item image-url="/assets/images/8.png"></wr-slot3d-item>
+      <wr-slot3d-item image-url="/assets/images/9.png"></wr-slot3d-item>
+      <wr-slot3d-item image-url="/assets/images/0.png"></wr-slot3d-item>
+    </wr-slot3d>
+  </p>
   <script lang="javascript">
     function toggleSpin() {
       var spin = document.getElementById('spin').checked;
       var slots = document.getElementById('slots');
-      console.log(slots);
       slots.setAttribute('is-running', spin);
+    }
+
+    function setItem() {
+      var item = document.getElementById('item').value;
+      var slots = document.getElementById('slots');
+      slots.setAttribute('item', item);
     }
   </script>
 

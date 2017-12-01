@@ -65,7 +65,6 @@ declare global {
   namespace JSXElements {
     export interface WrSlot3dAttributes extends HTMLAttributes {
       
-        isRunning?: boolean,
         hasOverflow?: boolean,
         item?: number
     }

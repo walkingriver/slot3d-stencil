@@ -16,7 +16,9 @@
   <link rel="manifest" href="/manifest.json">
 
   <style>
-    html,body,input {
+    html,
+    body,
+    input {
       font-family: Arial, Helvetica, sans-serif;
       font-size: 16pt;
     }
@@ -25,15 +27,19 @@
 
 <body>
   <p>
-    <input type="checkbox" id="spin" onchange="toggleSpin()">
-    <label for="spin">Spin</label>
+    <input type="button" id="start" onclick="start()" value="Start Spin">
+    <input type="button" id="stop" onclick="stop()" value="Stop Spin">
   </p>
+  <input type="button" id="stop" onclick="stop()" value="Stop Spin">
   <p>
     <label for="item">Set item: </label>
     <input type="number" min="0" max="9" id="item" value="5" onchange="setItem()">
   </p>
   <p>
-    <wr-slot3d id="slots" is-running="false" item="5">
+      <input type="button" id="spin" onclick="spin()" value="Random Spin">
+  </p>
+  <p>
+    <wr-slot3d id="slots" item="5">
       <wr-slot3d-item image-url="/assets/images/9.png"></wr-slot3d-item>
       <wr-slot3d-item image-url="/assets/images/8.png"></wr-slot3d-item>
       <wr-slot3d-item image-url="/assets/images/7.png"></wr-slot3d-item>
@@ -47,16 +53,23 @@
     </wr-slot3d>
   </p>
   <script lang="javascript">
-    function toggleSpin() {
-      var spin = document.getElementById('spin').checked;
-      var slots = document.getElementById('slots');
-      slots.setAttribute('is-running', spin);
-    }
+    var slots = document.getElementById('slots');
 
     function setItem() {
       var item = document.getElementById('item').value;
-      var slots = document.getElementById('slots');
       slots.setAttribute('item', item);
+    }
+
+    function start() {
+      slots.start();
+    }
+
+    function stop() {
+      slots.stop();
+    }
+
+    function spin() {
+      slots.spin();
     }
   </script>
 

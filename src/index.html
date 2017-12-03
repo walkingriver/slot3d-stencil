@@ -39,37 +39,76 @@
       <input type="button" id="spin" onclick="spin()" value="Random Spin">
   </p>
   <p>
-    <wr-slot3d id="slots" item="5">
-      <wr-slot3d-item image-url="/assets/images/9.png"></wr-slot3d-item>
-      <wr-slot3d-item image-url="/assets/images/8.png"></wr-slot3d-item>
-      <wr-slot3d-item image-url="/assets/images/7.png"></wr-slot3d-item>
-      <wr-slot3d-item image-url="/assets/images/6.png"></wr-slot3d-item>
-      <wr-slot3d-item image-url="/assets/images/5.png"></wr-slot3d-item>
-      <wr-slot3d-item image-url="/assets/images/4.png"></wr-slot3d-item>
-      <wr-slot3d-item image-url="/assets/images/3.png"></wr-slot3d-item>
-      <wr-slot3d-item image-url="/assets/images/2.png"></wr-slot3d-item>
-      <wr-slot3d-item image-url="/assets/images/1.png"></wr-slot3d-item>
-      <wr-slot3d-item image-url="/assets/images/0.png"></wr-slot3d-item>
-    </wr-slot3d>
+    <table>
+      <tr>
+        <td>
+
+          <wr-slot3d id="slot1" item="5">
+            <wr-slot3d-item image-url="/assets/images/9.png"></wr-slot3d-item>
+            <wr-slot3d-item image-url="/assets/images/8.png"></wr-slot3d-item>
+            <wr-slot3d-item image-url="/assets/images/7.png"></wr-slot3d-item>
+            <wr-slot3d-item image-url="/assets/images/6.png"></wr-slot3d-item>
+            <wr-slot3d-item image-url="/assets/images/5.png"></wr-slot3d-item>
+            <wr-slot3d-item image-url="/assets/images/4.png"></wr-slot3d-item>
+            <wr-slot3d-item image-url="/assets/images/3.png"></wr-slot3d-item>
+            <wr-slot3d-item image-url="/assets/images/2.png"></wr-slot3d-item>
+            <wr-slot3d-item image-url="/assets/images/1.png"></wr-slot3d-item>
+            <wr-slot3d-item image-url="/assets/images/0.png"></wr-slot3d-item>
+          </wr-slot3d>
+        </td>
+        <td>
+          <wr-slot3d id="slot2" item="5">
+            <wr-slot3d-item image-url="/assets/images/9.png"></wr-slot3d-item>
+            <wr-slot3d-item image-url="/assets/images/8.png"></wr-slot3d-item>
+            <wr-slot3d-item image-url="/assets/images/7.png"></wr-slot3d-item>
+            <wr-slot3d-item image-url="/assets/images/6.png"></wr-slot3d-item>
+            <wr-slot3d-item image-url="/assets/images/5.png"></wr-slot3d-item>
+            <wr-slot3d-item image-url="/assets/images/4.png"></wr-slot3d-item>
+            <wr-slot3d-item image-url="/assets/images/3.png"></wr-slot3d-item>
+            <wr-slot3d-item image-url="/assets/images/2.png"></wr-slot3d-item>
+            <wr-slot3d-item image-url="/assets/images/1.png"></wr-slot3d-item>
+            <wr-slot3d-item image-url="/assets/images/0.png"></wr-slot3d-item>
+          </wr-slot3d>
+        </td>
+        <td>
+          <wr-slot3d id="slot3" item="5">
+            <wr-slot3d-item image-url="/assets/images/9.png"></wr-slot3d-item>
+            <wr-slot3d-item image-url="/assets/images/8.png"></wr-slot3d-item>
+            <wr-slot3d-item image-url="/assets/images/7.png"></wr-slot3d-item>
+            <wr-slot3d-item image-url="/assets/images/6.png"></wr-slot3d-item>
+            <wr-slot3d-item image-url="/assets/images/5.png"></wr-slot3d-item>
+            <wr-slot3d-item image-url="/assets/images/4.png"></wr-slot3d-item>
+            <wr-slot3d-item image-url="/assets/images/3.png"></wr-slot3d-item>
+            <wr-slot3d-item image-url="/assets/images/2.png"></wr-slot3d-item>
+            <wr-slot3d-item image-url="/assets/images/1.png"></wr-slot3d-item>
+            <wr-slot3d-item image-url="/assets/images/0.png"></wr-slot3d-item>
+          </wr-slot3d>
+        </td>
+      </tr>
+    </table>
   </p>
   <script lang="javascript">
-    var slots = document.getElementById('slots');
+    var slot1 = document.getElementById('slot1');
+    var slot2 = document.getElementById('slot2');
+    var slot3 = document.getElementById('slot3');
 
     function setItem() {
       var item = document.getElementById('item').value;
-      slots.setAttribute('item', item);
+      slot1.setAttribute('item', item);
     }
 
     function start() {
-      slots.start();
+      slot1.start();
     }
 
     function stop() {
-      slots.stop();
+      slot1.stop();
     }
 
     function spin() {
-      slots.spin();
+      slot1.spin(1500);
+      slot2.spin(2000);
+      slot3.spin(2500);
     }
   </script>
 

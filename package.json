@@ -1,9 +1,13 @@
 {
-  "name": "@stencil/starter",
+  "name": "@walkingriver/slot3d",
   "private": true,
   "version": "0.0.1",
-  "description": "Stencil App Starter",
-  "files": [
+  "description": "Walking River Slot3d",
+  "main": "dist/collection/index.js",
+  "types": "dist/collection/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "browser": "dist/wr-slot3d.js",
+   "files": [
     "dist/"
   ],
   "scripts": {

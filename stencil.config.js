@@ -1,5 +1,8 @@
 exports.config = {
-  bundles: [
+  namespace: 'wr-slot3d',
+  generateDistribution: true,
+  generateWWW: true,
+   bundles: [
     { components: ['wr-slot3d', 'wr-slot3d-item'] }
   ],
   collections: [

@@ -31,9 +31,10 @@ declare global {
   }
   namespace JSXElements {
     export interface WrSlot3dItemAttributes extends HTMLAttributes {
-      imageUrl?: string;
-      name?: string;
-      hasOverflow?: boolean;
+      
+        imageUrl?: string,
+        name?: string,
+        hasOverflow?: boolean
     }
   }
 }
@@ -63,8 +64,9 @@ declare global {
   }
   namespace JSXElements {
     export interface WrSlot3dAttributes extends HTMLAttributes {
-      hasOverflow?: boolean;
-      item?: number;
+      
+        hasOverflow?: boolean,
+        item?: number
     }
   }
 }
